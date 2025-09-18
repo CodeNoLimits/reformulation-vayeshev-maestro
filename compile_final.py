@@ -14,12 +14,7 @@ def compile_reformulation():
     # Fichier de sortie
     output_file = "VAYESHEV_REFORMULE_FINAL_MAESTRO.txt"
 
-    # Récupérer le travail déjà fait
-    current_work = ""
-    if os.path.exists("reformule_en_cours.txt"):
-        with open("reformule_en_cours.txt", "r", encoding="utf-8") as f:
-            current_work = f.read()
-        print(f"✅ Travail existant récupéré: {len(current_work.split())} mots")
+    # PAS de travail existant - UNIQUEMENT les 12 sections reformulées
 
     # Parcourir les sections des agents
     total_words = 0
@@ -31,11 +26,7 @@ def compile_reformulation():
         final_file.write("*Reformulation intégrale préservant 100% du sens avec 60-80% de restructuration textuelle*\n\n")
         final_file.write("---\n\n")
 
-        # Ajouter le travail déjà fait
-        if current_work:
-            final_file.write(current_work)
-            final_file.write("\n\n---\n\n")
-            total_words += len(current_work.split())
+        # UNIQUEMENT les 12 sections reformulées
 
         # Parcourir les dossiers de sections
         for i in range(1, 13):
